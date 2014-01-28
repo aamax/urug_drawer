@@ -2,7 +2,7 @@ require "gosu"
 
 #  must install gosu gem to use class
 class Drawer < Gosu::Window
-  def initialize(user_obj, max_x: 800, max_y: 600, bkground_color: 0x00000000, foreground_color: 0xFFFFFFFF)
+  def initialize(user_obj, max_x: 800, max_y: 600, cellsize: 4, bkground_color: 0x00000000, foreground_color: 0xFFFFFFFF)
     # parameters
     @window_x = max_x;
     @window_y = max_y;
@@ -10,8 +10,7 @@ class Drawer < Gosu::Window
     @color = foreground_color
     @user_obj = user_obj
 
-    # static values
-    @cellsize = 4
+    @cellsize = cellsize
 
     super(@window_x, @window_y, false)
   end
@@ -24,10 +23,10 @@ class Drawer < Gosu::Window
   end
 
   def draw_point(x, y)
-    left = x * @cellsize
-    top = y * @cellsize
-    right = x * @cellsize + @cellsize
-    bottom = y * @cellsize + @cellsize
+    left = (x * @cellsize)+1
+    top = (y * @cellsize)+1
+    right = (x * @cellsize + @cellsize)-1
+    bottom = (y * @cellsize + @cellsize)-1
 
     self.draw_line(left, top, @color, right, top, @color)
     self.draw_line(right, top, @color, right, bottom, @color)
