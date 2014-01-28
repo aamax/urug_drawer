@@ -16,6 +16,13 @@ class Drawer < Gosu::Window
     super(@window_x, @window_y, false)
   end
 
+  def button_down(id)
+    case id
+    when Gosu::Button::KbEscape
+      close
+    end
+  end
+
   def draw_point(x, y)
     left = x * @cellsize
     top = y * @cellsize
@@ -29,7 +36,13 @@ class Drawer < Gosu::Window
   end
 
   def draw
-    @user_obj.draw()
+    @user_obj.draw
+  end
+
+  def update
+    if @user_obj.respond_to?(:update)
+      @user_obj.update
+    end
   end
 end
 
