@@ -75,8 +75,7 @@ class World
   def initialize_cells
     @cells = []
   end
-  
-  
+
   def add_cell(cell)
     found = false
     @cells.each do |c|
