@@ -36,12 +36,12 @@ class Drawer < Gosu::Window
   end
 
   def draw
-    @user_obj.draw
+    @user_obj.draw(self)
   end
 
   def update
     if @user_obj.respond_to?(:update)
-      @user_obj.update
+      @user_obj.update(self)
     end
   end
 end

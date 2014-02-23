@@ -3,8 +3,8 @@ class Point
   attr_accessor :x, :y
   
   def initialize(x,y)
-    @x = x
-    @y = y
+    @x = x.to_i
+    @y = y.to_i
   end
   
   def neighbor?(pt)
@@ -38,8 +38,10 @@ end
 class World
   attr_accessor :cells
   
-  def initialize() # width, height, num=(width * height / 30))
+  def initialize(width = 800, height = 600, num=(width * height / 30))
     @cells = []
+    @delay_count = 0
+    @delay_max = 5
           
     if ARGV.length > 0
       if ARGV[ARGV.length - 1] != 'blank'
@@ -48,6 +50,21 @@ class World
     else
       randomize_cells
     end
+  end
+  
+  def draw(drawer)
+    self.cells.each do |cell|
+      drawer.draw_point(cell.location.x.to_i, cell.location.y.to_i)
+    end
+    @delay_count += 1
+    if @delay_count >= @delay_max
+      @delay_count = 0
+      self.tick
+    end
+  end
+  
+  def update(drawer)
+    # nop for now... ???
   end
  
   def load_seed(file_path)
