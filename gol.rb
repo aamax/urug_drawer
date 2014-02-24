@@ -42,6 +42,8 @@ class World
     @cells = []
     @delay_count = 0
     @delay_max = 15
+    @width = width
+    @height = height
           
     if ARGV.length > 0
       if ARGV[ARGV.length - 1] != 'blank'
@@ -81,11 +83,11 @@ class World
   end
   
   def randomize_cells
-    @cells_y.times do |y|
-      @cells[y] = []
-      @cells_x.times do |x|
-        rand(10) > 8 ? @cells[x] << 1 : @cells[x] << 0
-      end
+    initialize_cells
+    for i in 1..1000 do
+      x = rand(@width)
+      y = rand(@height)
+      add_cell(Cell.new(x, y, self))
     end
   end
   

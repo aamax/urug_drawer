@@ -1,4 +1,5 @@
 require "gosu"
+require 'pry'
 
 #  must install gosu gem to use class
 class Drawer < Gosu::Window
@@ -35,38 +36,13 @@ class Drawer < Gosu::Window
   end
 
   def draw
-    @user_obj.draw
+    @user_obj.draw(self)
   end
 
   def update
     if @user_obj.respond_to?(:update)
-      @user_obj.update
+      @user_obj.update(self)
     end
   end
 end
-
-
-# example code below to demostrate how to utilize the class to render the GOL output to screen
-#class MyCode
-#  def initialize
-#    @drawer = Drawer.new(self)
-#    @drawer.show
-#  end
-#
-#  def draw
-#    (0..1000).each do |x|
-#      @drawer.draw_point(x, 6)
-#      @drawer.draw_point(x, 1)
-#    end
-#  end
-#end
-#
-#mycode = MyCode.new
-
-
-
-
-
-
-
 
