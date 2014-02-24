@@ -29,7 +29,7 @@
       <file leaf-file-name="gol.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gol.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="38" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="3270">
+            <state line="152" column="38" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="3270">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="tests.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="237" column="71" selection-start="5949" selection-end="5949" vertical-scroll-proportion="0.8322825" vertical-offset="2895" max-vertical-offset="5460">
+            <state line="218" column="0" selection-start="5390" selection-end="5390" vertical-scroll-proportion="0.77553594" vertical-offset="2655" max-vertical-offset="5445">
               <folding />
             </state>
           </provider>
@@ -64,6 +64,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/gol.rb" />
+        <option value="$PROJECT_DIR$/tests.rb" />
       </list>
     </option>
   </component>
@@ -260,7 +261,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drawer.rb">
@@ -279,14 +282,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gol.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="38" selection-start="1684" selection-end="1684" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="3270">
+        <state line="152" column="38" selection-start="3239" selection-end="3239" vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="3270">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="71" selection-start="5949" selection-end="5949" vertical-scroll-proportion="0.8322825" vertical-offset="2895" max-vertical-offset="5460">
+        <state line="218" column="0" selection-start="5390" selection-end="5390" vertical-scroll-proportion="0.77553594" vertical-offset="2655" max-vertical-offset="5445">
           <folding />
         </state>
       </provider>

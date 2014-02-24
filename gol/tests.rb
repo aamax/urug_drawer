@@ -216,7 +216,6 @@ describe World do
       
       new_cell = @world.cell_at(5,6)
       new_cell.should_not be nil
-      new_cell.status.should == 1
     end
     
   end
