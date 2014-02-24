@@ -3,7 +3,7 @@ require 'pry'
 
 #  must install gosu gem to use class
 class Drawer < Gosu::Window
-  def initialize(user_obj, max_x: 800, max_y: 600, cellsize: 4, bkground_color: 0x00000000, foreground_color: 0xFFFFFFFF)
+  def initialize(user_obj, max_x: 800, max_y: 600, cellsize: 12, bkground_color: 0x00000000, foreground_color: 0xFFFFFFFF)
     # parameters
     @window_x = max_x;
     @window_y = max_y;

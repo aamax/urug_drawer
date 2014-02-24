@@ -41,7 +41,7 @@ class World
   def initialize(width = 800, height = 600, num=(width * height / 30))
     @cells = []
     @delay_count = 0
-    @delay_max = 15
+    @delay_max = 10
     @width = width
     @height = height
           
@@ -61,6 +61,8 @@ class World
     @delay_count += 1
     if @delay_count >= @delay_max
       @delay_count = 0
+
+       # TODO
       self.tick
     end
   end
@@ -75,6 +77,7 @@ class World
     File.open(file_path) do |file|
       while (line = file.readline) && (!file.eof?)
         next if line.size < 3
+        next if line[0] == "#"
         
         (x, y) = line.split(',')
         add_cell(Cell.new(x, y, self))

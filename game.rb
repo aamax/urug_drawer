@@ -7,8 +7,8 @@ require 'pry'
 class Game 
  def initialize
    @world = World.new
-   
-   @drawer = Drawer.new(@world)
+
+   @drawer = Drawer.new(@world, cellsize: 10)
    @drawer.show
  end
 
