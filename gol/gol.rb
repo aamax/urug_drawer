@@ -41,7 +41,7 @@ class World
   def initialize(width = 800, height = 600, num=(width * height / 30))
     @cells = []
     @delay_count = 0
-    @delay_max = 5
+    @delay_max = 15
           
     if ARGV.length > 0
       if ARGV[ARGV.length - 1] != 'blank'
@@ -54,7 +54,7 @@ class World
   
   def draw(drawer)
     self.cells.each do |cell|
-      drawer.draw_point(cell.location.x.to_i, cell.location.y.to_i)
+      drawer.draw_point(cell.location.x.to_i, cell.location.y.to_i) if cell.status == 0
     end
     @delay_count += 1
     if @delay_count >= @delay_max
@@ -134,6 +134,7 @@ class World
         
       end
     end
+    update_world
   end
      
    def update_world

@@ -230,7 +230,7 @@ describe World do
       set[0].location.x.should == 5
       set[0].location.y.should == 5
     end
-
+    
     it "should return cell for N cell check" do
       set = @world.live_neighbors(Point.new(5,4))
       set.count.should == 1
@@ -278,28 +278,48 @@ describe World do
       set.count.should == 1
       set[0].location.x.should == 5
       set[0].location.y.should == 5
-    end
-    
+    end    
   end
+  
+  
+  
+  
 end
-#
-#describe World do
-#  it "should get list of neighbors for a cell" do
-#    world = World.new
-#    cell = Cell.new(Point.new(1,1), world)
-#    world.cells.length.should == 1
-#    cell = Cell.new(Point.new(1,2), world)
-#    world.cells.length.should == 2
-#  end
-#
-#  it "should kill all cells if only 2 exist" do
-#    world = World.new
-#    cell = Cell.new(Point.new(1,1), world)
-#    cell = Cell.new(Point.new(1,2), world)
-#    world.tick
-#    world.cells.length.should == 0
-#  end
-#
+
+describe World do
+  before :each do
+    @world = World.new
+  end
+  
+  it "should return live neighbor count for cells" do
+    cell1 = Cell.new(1,1, @world)
+    cell2 = Cell.new(1,2, @world)
+    cell1.neighbors.count.should == 1
+    cell2.neighbors.count.should == 1
+    
+    cell3 = Cell.new(1,5, @world)
+    cell3.neighbors.count.should == 0
+  end
+
+  
+  it "should get list of neighbors for a cell" do    
+    cell = Cell.new(1,1, @world)
+    @world.cells.length.should == 1
+    cell = Cell.new(1,2, @world)
+    @world.cells.length.should == 2
+  end
+  
+   it "should kill all cells if only 2 exist" do
+       cell = Cell.new(1,1, @world)
+       cell = Cell.new(1,2, @world)
+       
+       @world.tick
+       @world.cells.length.should == 0
+     end
+    
+  
+end
+
 #  it "should kill all cells with only 1 neighbor" do
 #    world = World.new
 #    cell = Cell.new(Point.new(1,1), world)
