@@ -41,7 +41,7 @@ class World
   def initialize(width = 800, height = 600, num=(width * height / 30))
     @cells = []
     @delay_count = 0
-    @delay_max = 10
+    @delay_max = 1
     @width = width
     @height = height
           
